@@ -30,9 +30,14 @@ describe("VendingMachine", () => {
     test.subject = new VendingMachine(test.processedData);
   });
   describe("Print inventory.", () => {
-    describe("When a given item id exists", () => {
-      it("Should tell me name of corresponding item", () => {
+    describe("When a given item id exists.", () => {
+      it("Should tell me name of corresponding item.", () => {
         expect(test.subject.printInventory("2")).toBe("Pepsi");
+      });
+    });
+    describe("When a given item id does not exist.", () => {
+      it("Should throw a error.", () => {
+        expect(() => test.subject.printInventory("10")).toThrow();
       });
     });
   });
