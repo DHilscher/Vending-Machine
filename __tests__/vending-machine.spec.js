@@ -61,7 +61,18 @@ describe("VendingMachine", () => {
       });
     });
   });
-  describe("Re-supply change.", () => {});
+  describe("Re-supply change.", () => {
+    describe("When given a valid integer.", () => {
+      it("Should add integer to remainingChange.", () => {
+        expect(test.subject.resupChange(5)).toBe(15.5);
+      });
+    });
+    describe("When given a invalid integer.", () => {
+      it("Should throw a error.", () => {
+        expect(() => test.subject.resupChange("a")).toThrow();
+      });
+    });
+  });
   describe("Dispense inventory based on payment.", () => {});
   describe("Return change.", () => {});
 });
