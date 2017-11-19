@@ -55,6 +55,11 @@ describe("VendingMachine", () => {
         expect(() => test.subject.refillInventory("2", "a")).toThrow();
       });
     });
+    describe("When given a invalid id.", () => {
+      it("Should throw a error.", () => {
+        expect(() => test.subject.refillInventory("a", 5)).toThrow();
+      });
+    });
   });
   describe("Re-supply change.", () => {});
   describe("Dispense inventory based on payment.", () => {});
