@@ -4,6 +4,9 @@ describe("VendingMachine", () => {
   beforeAll(() => {
     test = {};
     test.processedData = {
+      remainingChange: {
+        change: 10.5
+      },
       inventory: {
         1: {
           name: "Coke",
@@ -41,8 +44,19 @@ describe("VendingMachine", () => {
       });
     });
   });
-  describe("Refill inventory.", () => {});
-  describe("Re-supply inventory.", () => {});
+  describe("Refill inventory.", () => {
+    describe("When given a valid integer and id.", () => {
+      it("Should add integer to inStock id amount.", () => {
+        expect(test.subject.refillInventory("2", 5)).toBe(17);
+      });
+    });
+    describe("When given a invalid integer.", () => {
+      it("Should throw a error.", () => {
+        expect(() => test.subject.refillInventory("2", "a")).toThrow();
+      });
+    });
+  });
+  describe("Re-supply change.", () => {});
   describe("Dispense inventory based on payment.", () => {});
   describe("Return change.", () => {});
 });
