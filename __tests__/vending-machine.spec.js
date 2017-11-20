@@ -85,5 +85,16 @@ describe("VendingMachine", () => {
       });
     });
   });
-  describe("Return change.", () => {});
+  describe("Return change.", () => {
+    describe("When payment is more then item cost.", () => {
+      it("Should return the correct amount of change.", () => {
+        expect(test.subject.returnChange("3", 1.9)).toBe(0);
+      });
+    });
+    describe("When payment is less then item cost.", () => {
+      it("Should return error.", () => {
+        expect(() => test.subject.returnChange("3", 0.75)).toThrow();
+      });
+    });
+  });
 });
