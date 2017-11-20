@@ -12,4 +12,4 @@ We learned to use Test Driven Development and Behaviour Driven Development to cr
 
 ## Screenshot
 
-[Tests all passing Screenshot](./Vending-Machine-Tests-Screenshot.png)
+![](./Vending-Machine-Tests-Screenshot.png)
