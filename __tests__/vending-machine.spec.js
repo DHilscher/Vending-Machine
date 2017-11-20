@@ -73,6 +73,17 @@ describe("VendingMachine", () => {
       });
     });
   });
-  describe("Dispense inventory based on payment.", () => {});
+  describe("Dispense inventory based on payment.", () => {
+    describe("When given valid payment.", () => {
+      it("Should return correct item.", () => {
+        expect(test.subject.dispenseInventory("3", 1.75)).toBe("Mountain Dew");
+      });
+    });
+    describe("When given invalid payment.", () => {
+      it("Should return error.", () => {
+        expect(() => test.subject.dispenseInventory("3", 0.75)).toThrow();
+      });
+    });
+  });
   describe("Return change.", () => {});
 });
