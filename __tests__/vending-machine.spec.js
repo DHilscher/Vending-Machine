@@ -87,8 +87,8 @@ describe("VendingMachine", () => {
   });
   describe("Return change.", () => {
     describe("When payment is more then item cost.", () => {
-      it("Should return the correct amount of change.", () => {
-        expect(test.subject.returnChange("3", 4.9)).toBe(0);
+      it("Should return the correct amount of change & update remaining change in vending machine.", () => {
+        expect(test.subject.returnChange("3", 4.9)).toBe(6.85);
       });
     });
     describe("When payment is less then item cost.", () => {
