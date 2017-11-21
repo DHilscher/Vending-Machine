@@ -75,8 +75,8 @@ describe("VendingMachine", () => {
   });
   describe("Dispense inventory based on payment.", () => {
     describe("When given valid payment.", () => {
-      it("Should return correct item.", () => {
-        expect(test.subject.dispenseInventory("3", 1.75)).toBe("Mountain Dew");
+      it("Should return correct item & update stock.", () => {
+        expect(test.subject.dispenseInventory("3", 1.75)).toBe(12);
       });
     });
     describe("When given invalid payment.", () => {
